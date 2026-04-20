@@ -425,6 +425,7 @@ const QuestionFieldComponent: React.FC<QuestionFieldProps> = ({
               className="form-input"
               min={question.min}
               max={question.max}
+              step={question.step}
             />
             {question.unit && <span className="input-unit">{question.unit}</span>}
           </div>
@@ -472,6 +473,7 @@ const QuestionFieldComponent: React.FC<QuestionFieldProps> = ({
                       className={`form-input ${errors?.[field.id] ? 'error' : ''}`}
                       min={field.unit === 'месяцев' ? 0 : field.unit === 'лет' ? 1 : 0}
                       max={field.unit === 'месяцев' ? 12 : undefined}
+                      step={field.step}
                     />
                     {field.unit && <span className="input-unit">{field.unit}</span>}
                   </div>

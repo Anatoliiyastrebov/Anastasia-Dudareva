@@ -39,6 +39,7 @@ export interface GroupedField {
   unit?: string; // Единица измерения (кг, см, лет и т.д.)
   min?: number; // Минимальное значение для number
   max?: number; // Максимальное значение для number
+  step?: number; // Шаг для number (например, 0.1)
 }
 
 export interface QuestionField {
@@ -55,6 +56,7 @@ export interface QuestionField {
   multiple?: boolean; // Для file upload
   min?: number; // Для number
   max?: number; // Для number
+  step?: number; // Для number (например, 0.1)
   unit?: string; // Единица измерения для числовых полей
   // Для составных полей (group)
   groupedFields?: GroupedField[];
@@ -664,7 +666,8 @@ export const femaleQuestionnaire: Questionnaire = {
       placeholder: 'Количество воды',
       placeholderEn: 'Amount of water',
       unit: 'литров',
-      min: 0
+      min: 0,
+      step: 0.1
     },
     {
       id: 'q3',
@@ -1168,7 +1171,8 @@ export const maleQuestionnaire: Questionnaire = {
       placeholder: 'Количество воды',
       placeholderEn: 'Amount of water',
       unit: 'литров',
-      min: 0
+      min: 0,
+      step: 0.1
     },
     {
       id: 'q3',
