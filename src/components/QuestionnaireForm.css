@@ -37,6 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 14px;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -57,7 +58,7 @@
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 
@@ -66,20 +67,18 @@
 }
 
 .header-logo {
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   object-position: center;
   filter: drop-shadow(0 5px 10px rgba(107, 125, 107, 0.22));
-  transform: scale(2);
-  transform-origin: center;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #35584d;
   letter-spacing: 0.2px;
@@ -110,7 +109,7 @@
 .form-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 28px 20px;
   position: relative;
   z-index: 1;
 }
@@ -575,6 +574,15 @@
 }
 
 @media (max-width: 768px) {
+  .form-header {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .form-header-right {
+    gap: 10px;
+  }
+
   .form-content {
     padding: 20px 16px;
   }
@@ -584,12 +592,16 @@
   }
   
   .form-title-section h1 {
-    font-size: 14px;
+    font-size: 24px;
   }
   
   .header-logo {
-    width: 220px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-text {
+    font-size: 11px;
   }
 
   
@@ -617,7 +629,20 @@
 
 @media (max-width: 480px) {
   .form-header {
-    padding: 12px 12px;
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+
+  .logo-link {
+    order: 1;
+  }
+
+  .form-header-right {
+    order: 2;
+    width: 100%;
+    justify-content: center;
   }
 
   .form-title-section h1 {

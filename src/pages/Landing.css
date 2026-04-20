@@ -38,6 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   position: relative;
   z-index: 1;
   background: rgba(255, 255, 255, 0.7);
@@ -50,12 +51,12 @@
 
 .header-main-title {
   margin: 0;
-  font-size: 32px;
+  font-size: clamp(20px, 2.1vw, 32px);
   font-weight: 700;
   color: #4a5a4a;
   letter-spacing: 0.2px;
   text-align: center;
-  white-space: nowrap;
+  line-height: 1.15;
 }
 
 .logo-link {
@@ -69,7 +70,7 @@
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 
@@ -93,20 +94,18 @@
 }
 
 .header-logo {
-  width: 63px;
-  height: 63px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   object-position: center;
   filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.24));
-  transform: scale(2);
-  transform-origin: center;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #35584d;
   letter-spacing: 0.2px;
@@ -120,7 +119,7 @@
 
 .logo-link:hover .header-logo {
   filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.4));
-  transform: scale(2.08);
+  transform: scale(1.04);
 }
 
 @keyframes logoPulse {
@@ -138,7 +137,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 24px 28px;
+  padding: 24px 20px;
   position: relative;
   z-index: 1;
 }
@@ -237,13 +236,29 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .landing-header {
-    padding: 16px;
+    padding: 14px 18px;
+    gap: 12px;
   }
 
   .header-main-title {
-    font-size: 22px;
+    font-size: clamp(18px, 2.2vw, 24px);
+  }
+
+  .brand-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .header-main-title {
+    font-size: 18px;
   }
   
   .landing-title {
@@ -264,9 +279,35 @@
   }
   
   .header-logo {
-    width: 245px;
-    height: 72px;
+    width: 52px;
+    height: 52px;
   }
 
+  .brand-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 10px;
+  }
+
+  .logo-link {
+    order: 1;
+  }
+
+  .header-main-title {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .language-switcher {
+    order: 2;
+  }
 }
 

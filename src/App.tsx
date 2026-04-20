@@ -7,7 +7,12 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
       <GlobalNavigation />
       <Routes>
         <Route path="/" element={<Landing />} />

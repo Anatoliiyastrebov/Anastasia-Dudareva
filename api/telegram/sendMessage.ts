@@ -13,7 +13,7 @@ export default async function handler(request: Request): Promise<Response> {
   }
 
   const token = process.env.TELEGRAM_BOT_TOKEN || process.env.BOT_TOKEN;
-  const chatId = (process.env.TELEGRAM_CHAT_ID || process.env.CHAT_ID || '').trim();
+  const chatId = (process.env.TELEGRAM_CHAT_ID || '').trim();
   if (!token || !chatId) {
     return new Response(JSON.stringify({ ok: false, error: 'missing_env' }), {
       status: 500,
