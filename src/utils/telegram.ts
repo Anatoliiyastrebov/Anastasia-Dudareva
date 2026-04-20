@@ -108,6 +108,8 @@ async function sendFileToTelegram(file: File, caption?: string): Promise<boolean
         // Детальная обработка ошибок Telegram API
         if (responseData.error_code === 400) {
           console.error('Telegram API error (400): Bad Request -', responseData.description);
+        } else if (responseData.error_code === 403) {
+          console.error('Telegram API error (403): Forbidden -', responseData.description);
         } else if (responseData.error_code === 413) {
           console.error('Telegram API error (413): File too large -', responseData.description);
         } else if (responseData.error_code === 429) {
@@ -555,6 +557,14 @@ export async function sendToTelegram(
     if (!ok) {
       const description = responseData?.description ? ` (${responseData.description})` : '';
       console.error(`Telegram API error${description}:`, responseData);
+      if (responseData?.error_code === 403) {
+        const botGroupIssueMessage =
+          'Telegram: бот не может писать в группу. Добавьте бота в группу заново, выдайте право отправки сообщений и проверьте TELEGRAM_CHAT_ID.';
+        console.error(botGroupIssueMessage);
+        if (typeof window !== 'undefined') {
+          alert(botGroupIssueMessage);
+        }
+      }
       return false;
     }
     
