@@ -16,7 +16,7 @@
 
 .contact-methods-hint {
   font-size: 14px;
-  color: #6b7d6b;
+  color: #2f8b55;
   margin: 0 0 16px 0;
   line-height: 1.5;
 }
@@ -28,16 +28,17 @@
 }
 
 .contact-method-card {
-  border: 2px solid #e8e0d8;
+  border: 1px solid rgba(47, 139, 85, 0.22);
   border-radius: 12px;
   padding: 12px 14px;
-  background: #fff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(238, 250, 243, 0.92) 100%);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .contact-method-card.is-active {
-  border-color: #a8c5a8;
-  box-shadow: 0 2px 10px rgba(107, 125, 107, 0.12);
+  border-color: rgba(47, 139, 85, 0.5);
+  box-shadow: 0 10px 24px rgba(31, 109, 67, 0.2);
+  transform: translateY(-2px);
 }
 
 .contact-method-check {
@@ -46,14 +47,14 @@
   gap: 10px;
   cursor: pointer;
   font-weight: 600;
-  color: #4a5a4a;
+  color: #245f3d;
   font-size: 15px;
 }
 
 .contact-method-check input[type='checkbox'] {
   width: 18px;
   height: 18px;
-  accent-color: #6b7d6b;
+  accent-color: #2f8b55;
   cursor: pointer;
 }
 

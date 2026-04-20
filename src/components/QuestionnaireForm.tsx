@@ -72,6 +72,14 @@ export const QuestionnaireForm: React.FC = () => {
       </div>
     );
   }
+
+  const headerImageById: Record<string, string> = {
+    babies: '/card-babies.svg',
+    children: '/card-children.svg',
+    female: '/card-female.svg',
+    male: '/card-male.svg',
+    teen: '/card-teen.svg'
+  };
   
   // Показываем все вопросы сразу на одной странице
   const allQuestions = getAllQuestions(questionnaire.questions);
@@ -293,6 +301,13 @@ export const QuestionnaireForm: React.FC = () => {
             </span>
           </div>
         </Link>
+        <div className="form-header-card-icon-wrap">
+          <img
+            src={headerImageById[questionnaire.id] || '/card-children.svg'}
+            alt={questionnaire.name[lang]}
+            className="form-header-card-icon"
+          />
+        </div>
         <div className="form-header-right">
           <button
             type="button"

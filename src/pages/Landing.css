@@ -1,6 +1,6 @@
 .landing {
   min-height: 100vh;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ebe5 50%, #e8f0e8 100%);
+  background: linear-gradient(145deg, #f5fcf7 0%, #e2f5e8 48%, #ccead6 100%);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -14,10 +14,10 @@
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(168, 197, 168, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(63, 163, 102, 0.22) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
-  animation: pulse 8s ease-in-out infinite;
+  animation: floatY 8s ease-in-out infinite;
 }
 
 .landing::after {
@@ -27,10 +27,10 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(107, 125, 107, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(36, 129, 78, 0.16) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
-  animation: pulse 10s ease-in-out infinite;
+  animation: floatY 10s ease-in-out infinite reverse;
 }
 
 .landing-header {
@@ -44,8 +44,8 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 197, 176, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(53, 108, 72, 0.18);
+  box-shadow: 0 10px 30px rgba(34, 102, 62, 0.12);
   animation: slideInLeft 0.6s ease-out;
 }
 
@@ -53,10 +53,11 @@
   margin: 0;
   font-size: clamp(20px, 2.1vw, 32px);
   font-weight: 700;
-  color: #4a5a4a;
+  color: #1f4f35;
   letter-spacing: 0.2px;
   text-align: center;
   line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(41, 116, 69, 0.15);
 }
 
 .logo-link {
@@ -81,12 +82,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #6b7d6b 0%, #a8c5a8 100%);
+  background: linear-gradient(90deg, #2f8b55 0%, #71c28f 100%);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-link:hover {
-  transform: scale(1.08) translateY(-2px);
+  transform: scale(1.05) translateY(-2px);
 }
 
 .logo-link:hover::after {
@@ -98,7 +99,7 @@
   height: 64px;
   object-fit: cover;
   object-position: center;
-  filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.24));
+  filter: drop-shadow(0 8px 16px rgba(36, 129, 78, 0.28));
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -107,7 +108,7 @@
   flex-direction: column;
   font-size: 14px;
   font-weight: 700;
-  color: #35584d;
+  color: #245f3d;
   letter-spacing: 0.2px;
   line-height: 1.05;
   white-space: nowrap;
@@ -118,18 +119,8 @@
 }
 
 .logo-link:hover .header-logo {
-  filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.4));
-  transform: scale(1.04);
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-@keyframes logoGlow {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(126, 162, 126, 0.2)); }
-  50% { filter: drop-shadow(0 0 12px rgba(126, 162, 126, 0.45)); }
+  filter: drop-shadow(0 10px 20px rgba(47, 139, 85, 0.45));
+  transform: scale(1.06) rotate(-2deg);
 }
 
 .landing-content {
@@ -150,16 +141,16 @@
 
 .landing-title {
   font-size: 30px;
-  color: #6b7d6b;
+  color: #256b45;
   margin: 0 0 12px 0;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
   animation: fadeIn 1s ease-out 0.2s both;
 }
 
 .landing-description {
   font-size: 16px;
-  color: #6b6b6b;
+  color: #3e6f54;
   line-height: 1.6;
   margin: 0 0 20px 0;
   max-width: 700px;
@@ -170,7 +161,7 @@
 
 .landing-signature {
   font-size: 14px;
-  color: #8b9a8b;
+  color: #4b7a61;
   font-style: italic;
   margin: 0;
   animation: fadeIn 0.8s ease-out 0.8s both;
@@ -179,9 +170,10 @@
 }
 
 .landing-signature::before {
-  content: '✨';
+  content: '●';
   margin-right: 8px;
-  animation: pulse 2s ease-in-out infinite;
+  color: #2f8b55;
+  animation: floatY 2s ease-in-out infinite;
 }
 
 .questionnaires-grid {
@@ -217,23 +209,26 @@
 .landing-footer {
   padding: 24px 32px;
   text-align: center;
-  border-top: 1px solid rgba(232, 224, 216, 0.5);
-  background: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(53, 108, 72, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 1;
 }
 
 .impressum-link {
-  color: #6b7d6b;
+  color: #2f8b55;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .impressum-link:hover {
-  color: #4a5a4a;
+  color: #1f6d43;
   text-decoration: underline;
+  text-shadow: 0 2px 12px rgba(37, 121, 73, 0.24);
 }
 
 @media (max-width: 1100px) {

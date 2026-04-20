@@ -1,18 +1,19 @@
 .questionnaire-card {
-  background: linear-gradient(135deg, #fff 0%, #faf8f5 100%);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.9) 0%, rgba(230, 248, 236, 0.9) 100%);
   border-radius: 24px;
   padding: 32px;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(212, 197, 176, 0.3);
+  transition: all 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border: 1px solid rgba(45, 128, 78, 0.24);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   position: relative;
   min-height: 180px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 14px 30px rgba(34, 102, 62, 0.14);
   overflow: hidden;
+  backdrop-filter: blur(12px);
 }
 
 .questionnaire-card::before {
@@ -22,24 +23,23 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #a8c5a8 0%, #6b7d6b 50%, #a8c5a8 100%);
+  background: linear-gradient(90deg, #6ad08f 0%, #2f8b55 50%, #6ad08f 100%);
   background-size: 200% 100%;
   transform: scaleX(0);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
   animation: shimmer 3s ease-in-out infinite;
 }
 
 .questionnaire-card::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
+  inset: auto -120px -120px auto;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 197, 168, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
+  background: radial-gradient(circle, rgba(67, 177, 111, 0.2) 0%, transparent 70%);
+  transform: scale(0.7);
+  transition: transform 0.45s ease;
 }
 
 .questionnaire-card:hover::before {
@@ -47,31 +47,41 @@
 }
 
 .questionnaire-card:hover::after {
-  width: 300px;
-  height: 300px;
+  transform: scale(1.05);
 }
 
 .questionnaire-card:hover {
-  transform: translateY(-12px) scale(1.03) rotate(0.5deg);
-  box-shadow: 0 20px 40px rgba(107, 125, 107, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-color: #a8c5a8;
-  background: linear-gradient(135deg, #fff 0%, #f5f9f5 100%);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(31, 109, 67, 0.28);
+  border-color: rgba(47, 139, 85, 0.45);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.98) 0%, rgba(220, 244, 228, 0.95) 100%);
 }
 
 .card-icon {
-  font-size: 56px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 4px 8px rgba(107, 125, 107, 0.2));
+  width: 80px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  filter: drop-shadow(0 6px 12px rgba(47, 139, 85, 0.24));
+  animation: floatY 4.5s ease-in-out infinite;
+}
+
+.card-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .questionnaire-card:hover .card-icon {
-  transform: scale(1.2) rotate(5deg);
-  filter: drop-shadow(0 8px 16px rgba(107, 125, 107, 0.3));
+  transform: scale(1.14) rotate(4deg);
+  filter: drop-shadow(0 10px 20px rgba(47, 139, 85, 0.34));
 }
 
 .questionnaire-card h3 {
   margin: 0;
-  color: #4a5a4a;
+  color: #245f3d;
   font-size: 20px;
   text-align: center;
   font-weight: 600;
@@ -81,7 +91,7 @@
 }
 
 .questionnaire-card:hover h3 {
-  color: #6b7d6b;
+  color: #1f6d43;
 }
 
 .card-arrow {
@@ -89,14 +99,14 @@
   bottom: 20px;
   right: 20px;
   font-size: 28px;
-  color: #a8c5a8;
+  color: #4bb777;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
 .questionnaire-card:hover .card-arrow {
   transform: translateX(8px) scale(1.2);
-  color: #6b7d6b;
+  color: #1f6d43;
 }
 
 @media (max-width: 768px) {
@@ -106,7 +116,8 @@
   }
   
   .card-icon {
-    font-size: 40px;
+    width: 64px;
+    height: 64px;
   }
   
   .questionnaire-card h3 {

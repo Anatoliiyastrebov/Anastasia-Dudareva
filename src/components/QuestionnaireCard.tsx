@@ -13,6 +13,13 @@ export const QuestionnaireCard = ({ questionnaireId }: QuestionnaireCardProps) =
   const questionnaire = getQuestionnaireById(questionnaireId);
   
   if (!questionnaire) return null;
+
+  const cardImageById: Record<string, string> = {
+    babies: '/card-babies.svg',
+    children: '/card-children.svg',
+    female: '/card-female.svg',
+    male: '/card-male.svg'
+  };
   
   const handleClick = () => {
     navigate(`/questionnaire/${questionnaireId}`);
@@ -21,10 +28,12 @@ export const QuestionnaireCard = ({ questionnaireId }: QuestionnaireCardProps) =
   return (
     <div className="questionnaire-card" onClick={handleClick}>
       <div className="card-icon">
-        {questionnaireId === 'babies' && '👶'}
-        {questionnaireId === 'children' && '🧒'}
-        {questionnaireId === 'female' && '👩'}
-        {questionnaireId === 'male' && '👨'}
+        <img
+          src={cardImageById[questionnaireId]}
+          alt={questionnaire.name[lang]}
+          className="card-icon-image"
+          loading="lazy"
+        />
       </div>
       <h3>{questionnaire.name[lang]}</h3>
       <div className="card-arrow">→</div>

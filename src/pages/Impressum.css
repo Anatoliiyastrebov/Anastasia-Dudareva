@@ -1,6 +1,6 @@
 .impressum-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ebe5 100%);
+  background: linear-gradient(145deg, #f5fcf7 0%, #e4f6eb 52%, #cfebdb 100%);
 }
 
 .impressum-header {
@@ -11,7 +11,8 @@
   gap: 14px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e8e0d8;
+  border-bottom: 1px solid rgba(47, 139, 85, 0.2);
+  box-shadow: 0 12px 30px rgba(34, 102, 62, 0.14);
 }
 
 .logo-link {
@@ -37,7 +38,7 @@
   height: 60px;
   object-fit: cover;
   object-position: center;
-  filter: drop-shadow(0 5px 10px rgba(107, 125, 107, 0.22));
+  filter: drop-shadow(0 8px 16px rgba(47, 139, 85, 0.3));
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -46,7 +47,7 @@
   flex-direction: column;
   font-size: 13px;
   font-weight: 700;
-  color: #35584d;
+  color: #245f3d;
   letter-spacing: 0.2px;
   line-height: 1.05;
   white-space: nowrap;
@@ -70,47 +71,52 @@
 
 .impressum-content h1 {
   font-size: 42px;
-  color: #4a5a4a;
+  color: #245f3d;
   margin: 0 0 40px 0;
   text-align: center;
   font-weight: 600;
 }
 
 .impressum-section {
-  background: #fff;
-  border-radius: 12px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.94) 0%, rgba(233, 248, 238, 0.92) 100%);
+  border-radius: 16px;
   padding: 32px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(47, 139, 85, 0.2);
+  box-shadow: 0 14px 34px rgba(31, 109, 67, 0.16);
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.impressum-section:nth-of-type(1) { animation-delay: 0.1s; }
+.impressum-section:nth-of-type(2) { animation-delay: 0.2s; }
+.impressum-section:nth-of-type(3) { animation-delay: 0.3s; }
+.impressum-section:nth-of-type(4) { animation-delay: 0.4s; }
+.impressum-section:nth-of-type(5) { animation-delay: 0.5s; }
+.impressum-section:nth-of-type(6) { animation-delay: 0.6s; }
+
+.impressum-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(31, 109, 67, 0.2);
+  border-color: rgba(47, 139, 85, 0.35);
 }
 
 .impressum-section h2 {
   font-size: 24px;
-  color: #6b7d6b;
+  color: #2f8b55;
   margin: 0 0 16px 0;
   font-weight: 600;
 }
 
 .impressum-section p {
   font-size: 16px;
-  color: #4a5a4a;
+  color: #2e6244;
   line-height: 1.8;
   margin: 12px 0;
 }
 
 .impressum-section strong {
-  color: #4a5a4a;
+  color: #1f4f35;
   font-weight: 600;
-}
-
-@keyframes logoPulse {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-@keyframes logoGlow {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(126, 162, 126, 0.2)); }
-  50% { filter: drop-shadow(0 0 10px rgba(126, 162, 126, 0.4)); }
 }
 
 @media (max-width: 768px) {
