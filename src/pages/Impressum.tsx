@@ -12,7 +12,7 @@ export const Impressum = () => {
     <div className="impressum-page">
       <header className="impressum-header">
         <Link to="/" className="logo-link">
-          <img src="/logo.svg" alt="Wellness Logo" className="header-logo" />
+          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
         </Link>
         <div className="impressum-header-right">
           <button

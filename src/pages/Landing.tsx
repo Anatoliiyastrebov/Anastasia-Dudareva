@@ -13,7 +13,7 @@ export const Landing: React.FC = () => {
     <div className="landing">
       <header className="landing-header">
         <Link to="/" className="logo-link">
-          <img src="/logo.svg" alt="Wellness Logo" className="header-logo" />
+          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
         </Link>
         <LanguageSwitcher />
       </header>

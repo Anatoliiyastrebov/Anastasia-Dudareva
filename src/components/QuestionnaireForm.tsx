@@ -285,7 +285,7 @@ export const QuestionnaireForm: React.FC = () => {
     <div className="form-container">
       <header className="form-header">
         <Link to="/" className="logo-link">
-          <img src="/logo.svg" alt="Wellness Logo" className="header-logo" />
+          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
         </Link>
         <div className="form-header-right">
           <button
