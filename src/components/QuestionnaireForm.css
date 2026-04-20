@@ -71,6 +71,9 @@
   object-fit: cover;
   object-position: center;
   filter: drop-shadow(0 5px 10px rgba(107, 125, 107, 0.22));
+  transform: scale(2);
+  transform-origin: center;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .brand-text {
@@ -86,10 +89,6 @@
 
 .brand-text span {
   display: block;
-}
-
-.logo-link:hover .header-logo {
-  animation: logoPulse 1.6s ease-in-out infinite;
 }
 
 @keyframes logoPulse {

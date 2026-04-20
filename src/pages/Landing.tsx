@@ -21,13 +21,13 @@ export const Landing: React.FC = () => {
             </span>
           </div>
         </Link>
+        <h1 className="header-main-title">{t('common.title', lang)}</h1>
         <LanguageSwitcher />
       </header>
       
       <main className="landing-content">
         <div className="landing-hero">
-          <h1 className="landing-title">{t('common.welcome', lang)}</h1>
-          <h2 className="landing-name">{t('common.title', lang)}</h2>
+          <h2 className="landing-title">{t('common.welcome', lang)}</h2>
           <p className="landing-description">
             {t('common.description', lang).split('\n').map((line, i) => (
               <React.Fragment key={i}>
