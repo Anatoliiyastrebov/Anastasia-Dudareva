@@ -13,7 +13,13 @@ export const Landing: React.FC = () => {
     <div className="landing">
       <header className="landing-header">
         <Link to="/" className="logo-link">
-          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
+          <div className="brand-logo">
+            <img src="/logo-icon.png" alt="Wellness Logo" className="header-logo" />
+            <span className="brand-text">
+              <span>{t('common.brandFirstName', lang)}</span>
+              <span>{t('common.brandLastName', lang)}</span>
+            </span>
+          </div>
         </Link>
         <LanguageSwitcher />
       </header>

@@ -56,6 +56,13 @@
   position: relative;
 }
 
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
 .logo-link::after {
   content: '';
   position: absolute;
@@ -76,14 +83,46 @@
 }
 
 .header-logo {
-  height: 50px;
-  width: auto;
-  filter: drop-shadow(0 4px 8px rgba(107, 125, 107, 0.3));
-  transition: filter 0.3s ease;
+  width: 126px;
+  height: 126px;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.24));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: 700;
+  color: #35584d;
+  letter-spacing: 0.2px;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.brand-text span {
+  display: block;
 }
 
 .logo-link:hover .header-logo {
   filter: drop-shadow(0 6px 12px rgba(107, 125, 107, 0.4));
+  transform: scale(1.02);
+}
+
+.logo-link:hover .header-logo {
+  animation: logoPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(126, 162, 126, 0.2)); }
+  50% { filter: drop-shadow(0 0 12px rgba(126, 162, 126, 0.45)); }
 }
 
 .landing-content {
@@ -229,7 +268,9 @@
   }
   
   .header-logo {
-    height: 40px;
+    width: 245px;
+    height: 72px;
   }
+
 }
 

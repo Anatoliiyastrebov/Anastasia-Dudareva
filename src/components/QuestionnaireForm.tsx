@@ -285,7 +285,13 @@ export const QuestionnaireForm: React.FC = () => {
     <div className="form-container">
       <header className="form-header">
         <Link to="/" className="logo-link">
-          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
+          <div className="brand-logo">
+            <img src="/logo-icon.png" alt="Wellness Logo" className="header-logo" />
+            <span className="brand-text">
+              <span>{t('common.brandFirstName', lang)}</span>
+              <span>{t('common.brandLastName', lang)}</span>
+            </span>
+          </div>
         </Link>
         <div className="form-header-right">
           <button
@@ -293,7 +299,7 @@ export const QuestionnaireForm: React.FC = () => {
             className="header-back-button"
             onClick={() => navigate('/')}
           >
-            ← Назад
+            {`← ${t('common.back', lang)}`}
           </button>
           <LanguageSwitcher />
         </div>

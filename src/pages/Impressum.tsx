@@ -12,7 +12,13 @@ export const Impressum = () => {
     <div className="impressum-page">
       <header className="impressum-header">
         <Link to="/" className="logo-link">
-          <img src="/logo-main.png" alt="Wellness Logo" className="header-logo" />
+          <div className="brand-logo">
+            <img src="/logo-icon.png" alt="Wellness Logo" className="header-logo" />
+            <span className="brand-text">
+              <span>{t('common.brandFirstName', lang)}</span>
+              <span>{t('common.brandLastName', lang)}</span>
+            </span>
+          </div>
         </Link>
         <div className="impressum-header-right">
           <button
@@ -20,7 +26,7 @@ export const Impressum = () => {
             className="header-back-button"
             onClick={() => navigate('/')}
           >
-            ← Назад
+            {`← ${t('common.back', lang)}`}
           </button>
           <LanguageSwitcher />
         </div>
@@ -37,7 +43,7 @@ export const Impressum = () => {
         
         <section className="impressum-section">
           <h2>{t('impressum.contact', lang)}</h2>
-          <p>{t('impressum.contactTextRu', lang)}</p>
+          <p>{t('impressum.contactText', lang)}</p>
           <p>
             <strong>{t('impressum.emailLabel', lang)}:</strong> {t('impressum.emailValue', lang)}
           </p>

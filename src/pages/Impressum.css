@@ -20,14 +20,38 @@
   transition: transform 0.3s ease;
 }
 
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
 .logo-link:hover {
   transform: scale(1.05);
 }
 
 .header-logo {
-  height: 50px;
-  width: auto;
-  filter: drop-shadow(0 2px 4px rgba(107, 125, 107, 0.2));
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 5px 10px rgba(107, 125, 107, 0.22));
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  font-weight: 700;
+  color: #35584d;
+  letter-spacing: 0.2px;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.brand-text span {
+  display: block;
 }
 
 .impressum-header-right {
@@ -77,7 +101,27 @@
   font-weight: 600;
 }
 
+.logo-link:hover .header-logo {
+  animation: logoPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(126, 162, 126, 0.2)); }
+  50% { filter: drop-shadow(0 0 10px rgba(126, 162, 126, 0.4)); }
+}
+
 @media (max-width: 768px) {
+  .header-logo {
+    width: 220px;
+    height: 64px;
+  }
+
+
   .impressum-content {
     padding: 40px 20px;
   }
