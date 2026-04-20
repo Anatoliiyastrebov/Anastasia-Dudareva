@@ -553,7 +553,8 @@ export async function sendToTelegram(
     );
     
     if (!ok) {
-      console.error('Telegram API error:', responseData);
+      const description = responseData?.description ? ` (${responseData.description})` : '';
+      console.error(`Telegram API error${description}:`, responseData);
       return false;
     }
     
