@@ -594,7 +594,7 @@ export async function sendToTelegram(
       const failedFiles: string[] = [];
       
       for (let i = 0; i < files.length; i++) {
-        const { file, questionLabel } = files[i];
+        const { file } = files[i];
         
         // Формируем подпись для файла
         const fileCaption = `📎 Файл ${i + 1}/${files.length}\nИмя файла: ${file.name}\nРазмер: ${(file.size / 1024).toFixed(1)} KB`;

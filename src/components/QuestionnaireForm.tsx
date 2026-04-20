@@ -348,6 +348,12 @@ export const QuestionnaireForm: React.FC = () => {
           </div>
         </form>
       </main>
+
+      <footer className="form-footer">
+        <Link to="/impressum" className="impressum-link">
+          {t('impressum.title', lang)}
+        </Link>
+      </footer>
     </div>
   );
 };
