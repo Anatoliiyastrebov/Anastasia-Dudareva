@@ -35,9 +35,9 @@
 
 .landing-header {
   padding: 20px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
   gap: 20px;
   position: relative;
   z-index: 1;
@@ -47,6 +47,22 @@
   border-bottom: 1px solid rgba(53, 108, 72, 0.18);
   box-shadow: 0 10px 30px rgba(34, 102, 62, 0.12);
   animation: slideInLeft 0.6s ease-out;
+}
+
+.landing-header .logo-link {
+  grid-column: 1;
+  justify-self: start;
+  align-self: start;
+}
+
+.landing-header .header-main-title {
+  justify-self: center;
+  align-self: start;
+}
+
+.landing-header .language-switcher {
+  justify-self: end;
+  align-self: start;
 }
 
 .header-main-title {
@@ -63,9 +79,12 @@
 .logo-link {
   display: flex;
   align-items: center;
+  min-width: max-content;
+  flex-shrink: 0;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  z-index: 2;
 }
 
 .brand-logo {
@@ -87,7 +106,7 @@
 }
 
 .logo-link:hover {
-  transform: scale(1.05) translateY(-2px);
+  transform: none;
 }
 
 .logo-link:hover::after {
@@ -119,8 +138,8 @@
 }
 
 .logo-link:hover .header-logo {
-  filter: drop-shadow(0 10px 20px rgba(47, 139, 85, 0.45));
-  transform: scale(1.06) rotate(-2deg);
+  filter: drop-shadow(0 8px 16px rgba(36, 129, 78, 0.28));
+  transform: none;
 }
 
 .landing-content {
@@ -235,6 +254,7 @@
   .landing-header {
     padding: 14px 18px;
     gap: 12px;
+    grid-template-columns: auto 1fr auto;
   }
 
   .header-main-title {
@@ -250,6 +270,7 @@
   .landing-header {
     padding: 12px 14px;
     gap: 8px;
+    grid-template-columns: auto 1fr auto;
   }
 
   .header-main-title {
@@ -285,24 +306,29 @@
 
 @media (max-width: 560px) {
   .landing-header {
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 10px;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo lang"
+      "title title";
+    align-items: start;
+    row-gap: 8px;
   }
 
-  .logo-link {
-    order: 1;
+  .landing-header .logo-link {
+    grid-area: logo;
+    justify-self: start;
   }
 
-  .header-main-title {
-    order: 3;
+  .landing-header .header-main-title {
+    grid-area: title;
     width: 100%;
     text-align: center;
     font-size: 17px;
   }
 
-  .language-switcher {
-    order: 2;
+  .landing-header .language-switcher {
+    grid-area: lang;
+    justify-self: end;
   }
 }
 

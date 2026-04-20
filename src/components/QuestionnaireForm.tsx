@@ -80,6 +80,9 @@ export const QuestionnaireForm: React.FC = () => {
     male: '/card-male.svg',
     teen: '/card-teen.svg'
   };
+
+  const questionnaireIllustrationSrc =
+    headerImageById[questionnaire.id] || '/card-children.svg';
   
   // Показываем все вопросы сразу на одной странице
   const allQuestions = getAllQuestions(questionnaire.questions);
@@ -303,12 +306,14 @@ export const QuestionnaireForm: React.FC = () => {
         </Link>
         <div className="form-header-card-icon-wrap">
           <img
-            src={headerImageById[questionnaire.id] || '/card-children.svg'}
-            alt={questionnaire.name[lang]}
+            src={questionnaireIllustrationSrc}
+            alt=""
             className="form-header-card-icon"
+            aria-hidden={true}
           />
         </div>
         <div className="form-header-right">
+          <LanguageSwitcher />
           <button
             type="button"
             className="header-back-button"
@@ -316,12 +321,19 @@ export const QuestionnaireForm: React.FC = () => {
           >
             {`← ${t('common.back', lang)}`}
           </button>
-          <LanguageSwitcher />
         </div>
       </header>
       
       <main className="form-content">
         <div className="form-title-section">
+          <div className="form-title-card-icon-wrap">
+            <img
+              src={questionnaireIllustrationSrc}
+              alt=""
+              className="form-title-card-icon"
+              aria-hidden={true}
+            />
+          </div>
           <h1>{questionnaire.name[lang]}</h1>
         </div>
         
